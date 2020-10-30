@@ -1,0 +1,2 @@
+English : You have to change <firebaseconfig> variable in 'server.js' file with the informations of your projet on Firebase otherwise the app will crash.
+Français: il faut que tu modifie la variable <firebaseconfig> situé dans le fichier 'server.js' en soumettant les informations de ton projet sur Firebase sinon l'application ne va pas marcher.

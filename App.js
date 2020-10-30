@@ -15,16 +15,9 @@ const stack = createStackNavigator( );
 export default  HomeStackScreen = (props) => (
   <NavigationContainer>
     <stack.Navigator>
-    <stack.Screen name="auth" component={auth}
-          options={({ navigation, route }) => ({
-            
-         
-         headerShown:false,
-          headerStyle: {
-            backgroundColor: 'white'
-          }
-        })} />
-      <stack.Screen name="Home" component={home}  options={({ navigation, route }) => ({  
+
+      <stack.Screen name="Home" component={home}  options={({ navigation, route }) => ({ 
+        headerLeft:null, 
         headerRight: () => (
         <Icon style={styles.fav}
           size={30}
@@ -46,15 +39,23 @@ export default  HomeStackScreen = (props) => (
             color="#00aced"
           />
         ),
-        headerTitle: 'search',
+        headerTitle:'search',
         headerTintColor:'#00aced',
         headerStyle: {
-          backgroundColor: 'white'
+          backgroundColor:'white'
         }
       })} />
       <stack.Screen name="listFavoris" component={listFavoris}
           options={({ navigation, route }) => ({
-            
+            headerLeft: null,
+            headerRight: () => (
+              <Icon style={styles.fav}
+                size={30}
+                onPress={() => {navigation.navigate('Home')}}
+                name="home"
+                color="#00aced"
+              />
+            ),
           headerTitle: 'Favoris' ,
           headerTintColor:'#00aced',
           headerStyle: {

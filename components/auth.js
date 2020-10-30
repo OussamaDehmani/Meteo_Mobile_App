@@ -29,13 +29,13 @@ export default class Auth extends Component {
   auth() {
     const { navigation } = this.props;
     var firebaseConfig = {
-      apiKey: "AIzaSyDsF4ga8plwnXbNm8--6qIRqcy9YD3h3is",
-      authDomain: "meteo-9725c.firebaseapp.com",
-      databaseURL: "https://meteo-9725c.firebaseio.com",
-      projectId: "meteo-9725c",
-      storageBucket: "meteo-9725c.appspot.com",
-      messagingSenderId: "878682564863",
-      appId: "1:878682564863:web:a809fe5aa3464e68f344ca"
+      apiKey: "xx",
+      authDomain: "xx",
+      databaseURL: "xx",
+      projectId: "xx",
+      storageBucket: "xx",
+      messagingSenderId: "xx",
+      appId: "xx"
     };
     // Initialize Firebase
     if (!firebase.apps.length) {
@@ -43,10 +43,14 @@ export default class Auth extends Component {
     }
 
     var sub = firebase.auth().signInWithEmailAndPassword(this.state.Email, this.state.Password)
-      .then(() => {
+      .then((data) => {
         console.log('Exist');
         navigation.navigate('Home', {
-          userid: this.sub
+          userid: data.user.uid
+
+        })
+        navigation.navigate('listFavoris', {
+          userid: data.user.uid
 
         })
       })

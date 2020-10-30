@@ -27,7 +27,7 @@ export default class Home extends Component {
 
     render (){
       const { navigation } = this.props;
- 
+ //console.log(this.props.route.params.userid)
       
       return(
         <View >
@@ -49,7 +49,8 @@ export default class Home extends Component {
             />
           <Button style={styles.b}
         onPress={()=>{navigation.navigate('Favoris', {
-            data1: this.state.ville
+            data1: this.state.ville,
+           // userid:this.props.route.params.userid
             
           });
          

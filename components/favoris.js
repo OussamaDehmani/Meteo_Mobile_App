@@ -18,10 +18,11 @@ iconetype="favorite-border";
       temperature:0,
       error:'',
       Myvar:this.props.route.params.data1,
+            
     
   };
   }
-  getdata(){
+  async setFavoris(){
   
       let url =  `http://api.openweathermap.org/data/2.5/weather?q=${this.props.route.params.data1}&units=imperial&appid=8f08f225d829ea30971861473c00202a`;
     
@@ -36,8 +37,9 @@ iconetype="favorite-border";
               desc:data.weather[0]['description'],
               temperature: data.main.temp,
               ville: data.name,
+              //user:this.props.route.params.userid
       })
-      }).then(()=>{add(this.state.ville,this.state.temperature,new Date());      }
+      }).then(()=>{add(this.state.ville,this.state.temperature,new Date());  }
     
   
     
@@ -46,7 +48,7 @@ iconetype="favorite-border";
   }
     componentDidMount(props) {
 
-   this.getdata()
+   this.setFavoris()
     
    
 
